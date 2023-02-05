@@ -16,7 +16,7 @@ function makeLibAndTextArrays(){
 	textValue=textArea.value;
 	textValue=textValue.replace(/\s+/g, ' ').trim();
 	textValue=textValue.toLowerCase();
-	textValue=textValue.replace(/[@^&\/\\#,+()$~%.'":;*?<>{}1234567890_+=]/g, "");
+	textValue=textValue.replace(/[\\#,+()$~%.'":;*?<>{}1234567890_+=]/g, "");
 	console.log(textValue);
 	textArr=textValue.split(" ");
 	table.innerHTML="";
@@ -66,7 +66,7 @@ function backAreaP(){
 	//console.log(insertionText);
 	//console.log(hideText);
 	//console.log(hideText.replace(/[^a-zA-Z ]/g, ""));
-	hideText=hideText.replace(/[@^&\/\\#,+()$~%.'":;*?<>{}1234567890_+=]/g, "");
+	hideText=hideText.replace(/[\\#,+()$~%.'":;*?<>{}1234567890_+=]/g, "");
 	if(hideText.includes(insertionText)){
 			//console.log(`input text is: ${insertionText}`);
 			hideText=hideText.replaceAll(insertionText,`<span class="yellow_span">${insertionText}</span>`);
